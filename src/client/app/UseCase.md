@@ -1,0 +1,7 @@
+# UseCase
+
+## Sobre
+
+## Justificativa
+
+## Propriedades
