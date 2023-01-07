@@ -6,7 +6,6 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc && cp LICENSE ./dist/LICENSE && cp README.md ./dist/README.md && cp package.json ./dist/package.json &&  cp ./src/types.d.ts ./dist",
-    "gcloud-auth": "gcloud artifacts print-settings npm --project=imunoderma --repository=npm-packages --location=us-central1 --scope=@imunoderma && npx google-artifactregistry-auth ./.npmrc",
     "publish": "npm publish ./dist",
     "test": "node --test --trace-warnings --experimental-fetch"
   },
