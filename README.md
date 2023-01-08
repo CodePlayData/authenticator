@@ -2,7 +2,7 @@
 
 # Authenticator
 
-![autenticador-logo](./assets/authenticator-logo.png)
+![autenticador-logo](./assets/authenticator-dark-logo.png)
 
 _DX sem atrito_
 
