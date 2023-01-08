@@ -1,10 +1,20 @@
+<div align="center">
+
 # Authenticator
 
-## Sobre o repositório
+![autenticador-logo](./assets/authenticator-logo.png)
+
+_DX sem atrito_
+
+<br> 
+
+</div>
 
 O principal motivo dessa lib é implementação dos processos de autenticação de usuário seguindo as melhores práticas de arquitetura de software. A princípio os componentes serão "documentados" em português nos testes e em inglês no próprio código com JsDoc.
 
 <br> 
+
+---
 
 ## Justificativa
 A necessidade de abstrair lógicas de negócio das interfaces de usuários. A ideia é manter mais de uma opção de funcionamento do código, _i.e._ para quem quiser mais granulidade nos ciclos dessa aplicação é possível fazer com que a classe `Authenticator` funcione registrando os `Channels`, os `Handlers` e utilize a orientação a eventos; ou, caso o mais importante sejam os finais dos ciclos de ação então a estratégia de cadeia de comando seja ideal, pois caso todo o comando não seja finalizado ele deve proporcionar a reversão e emitir um erro pra quem o chamou.
