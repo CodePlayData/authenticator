@@ -1,7 +1,0 @@
-# User
-
-## Sobre
-
-## Justificativa
-
-## Propriedades

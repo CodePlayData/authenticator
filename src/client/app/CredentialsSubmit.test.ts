@@ -6,7 +6,7 @@ import { AuthConfig, Authenticator } from "./Autheticator.js";
 import { Credentials } from "./Credentials.js";
 import { Password } from "./Password.js";
 import 'mock-local-storage';
-import { Fetch, LocalStorage } from "@imunoderma/i_adapters";
+import { Fetch, LocalStorage } from "@codeplaydata/adapters";
 import { LocalStorageOperations as LocalStorageOps } from "../infra/LocalStorageOperations.js";
 
 test('Integration Test - Testing if the CredentialsSubmit action changes anything.', async() => {

@@ -1,7 +1,0 @@
-# Credentials
-
-## Sobre
-
-## Justificativa
-
-## Propriedades

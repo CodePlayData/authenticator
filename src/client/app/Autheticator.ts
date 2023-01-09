@@ -4,7 +4,7 @@ import {
     IndexedDB as IndexedDatabaseAdapter, 
     Connection, 
     HttpClient 
-} from "@imunoderma/i_adapters";
+} from "@codeplaydata/adapters";
 import { UserAuthenticatedHandler } from "../interface/Handlers/UserAuthenticated.js";
 import { CredentialsSubmittedHandler } from "../interface/Handlers/CredentialsSubmitted.js";
 import { CredentialsSavedHandler } from "../interface/Handlers/CredentialsSaved.js";

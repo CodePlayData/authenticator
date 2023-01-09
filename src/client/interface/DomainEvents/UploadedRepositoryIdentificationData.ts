@@ -1,7 +1,13 @@
 // @filename: UploadedRepositoryIdentificationData.ts
 import { Credentials } from "../../app/Credentials.js";
 import { DomainEvent } from "../DomainEvent.js";
-import { UserData } from "../../types";
+
+type UserData = {
+    name: string,
+    email: string,
+    password: string,
+    [key: string]: any
+};
 
 class UploadedRepositoryIdentificationData implements DomainEvent {
     name = 'UploadedRepositoryIdentificationData';
@@ -18,5 +24,6 @@ class UploadedRepositoryIdentificationData implements DomainEvent {
 }
 
 export {
-    UploadedRepositoryIdentificationData
+    UploadedRepositoryIdentificationData,
+    UserData
 }

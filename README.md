@@ -10,7 +10,9 @@ _DX sem atrito_
 
 </div>
 
-O principal motivo dessa lib é implementação dos processos de autenticação de usuário seguindo as melhores práticas de arquitetura de software. A princípio os componentes serão "documentados" em português nos testes e em inglês no próprio código com JsDoc.
+O principal motivo dessa lib é implementação dos processos de autenticação de usuário seguindo as melhores práticas de arquitetura de software. 
+
+> A princípio os componentes serão "documentados" em português nos testes e em inglês no próprio código com JsDoc.
 
 <br> 
 
@@ -21,7 +23,7 @@ A necessidade de abstrair lógicas de negócio das interfaces de usuários. A id
 
 <br>
 
-## Implementação do Ciclo de Autenticação
+## Implementação
 
 ### 1. Client
 
@@ -35,5 +37,6 @@ e sendo assim o ponto de entrada é com o **Caso de Uso** [app/CredentialsSubmit
 
 
 
-
 <br>
+
+## Como Usar

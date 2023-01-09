@@ -1,5 +1,5 @@
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
-import { LocalStorageQuery } from "@imunoderma/i_adapters/enums.js";
+import { LocalStorageQuery } from "@codeplaydata/adapters/enums.js";
 
 class LocalStorageOperations implements DatabaseOperationsManifest {
     Create = LocalStorageQuery['setItem'];

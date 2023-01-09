@@ -1,4 +1,4 @@
-import { HttpClient } from "@imunoderma/i_adapters/http/client/HttpClient.js";
+import { HttpClient } from "@codeplaydata/adapters/http/client/HttpClient.js";
 import { Credentials } from "../../app/Credentials.js";
 import { RequestBuilder } from "../../utils/RequestBuilder.js";
 import { Channel } from "../Channel.js";

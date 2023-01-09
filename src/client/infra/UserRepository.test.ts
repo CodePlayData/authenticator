@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert";
 import { UserRepository } from "./UserRepository.js";
-import { LocalStorage as LocalStorageAdapter } from "@imunoderma/i_adapters";
+import { LocalStorage as LocalStorageAdapter } from "@codeplaydata/adapters";
 import 'mock-local-storage';
 import { Password } from "../app/Password.js";
 import { Credentials } from "../app/Credentials.js";

@@ -2,7 +2,7 @@
 import { UserIdentified } from "../interface/DomainEvents/UserIdentified.js";
 import { UploadedRepositoryIdentificationData } from "../interface/DomainEvents/UploadedRepositoryIdentificationData.js";
 import { UserNotIdentified } from "../interface/DomainEvents/UserNotIdentified.js";
-import type { Connection, DatabaseQuery } from "@imunoderma/i_adapters";
+import type { Connection, DatabaseQuery } from "@codeplaydata/adapters";
 import type { Credentials } from "../app/Credentials.js";
 import type { User } from "../app/User"
 import { DatabaseOperationsManifest as DbOps } from "./DatabaseOperationsManifest.js";

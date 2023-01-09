@@ -5,7 +5,7 @@
  *  stores your entity (or Data Transfer Object).
  */
 
-import { Connection, DatabaseQuery } from "@imunoderma/i_adapters";
+import { Connection, DatabaseQuery } from "@codeplaydata/adapters";
 import { DomainEvent } from "../interface/DomainEvent";
 import { DatabaseOperationsManifest as DbOps } from "./DatabaseOperationsManifest";
  

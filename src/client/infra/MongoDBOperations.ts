@@ -1,5 +1,5 @@
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
-import { MongoQuery } from "@imunoderma/i_adapters/enums.js";
+import { MongoQuery } from "@codeplaydata/adapters/enums.js";
 
 class MongoDBOperations implements DatabaseOperationsManifest {
     Create = MongoQuery['insertOne'];

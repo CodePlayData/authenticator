@@ -1,4 +1,4 @@
-import { DatabaseQuery } from "@imunoderma/i_adapters";
+import { DatabaseQuery } from "@codeplaydata/adapters";
 
 interface DatabaseOperationsManifest {
     Create: DatabaseQuery;

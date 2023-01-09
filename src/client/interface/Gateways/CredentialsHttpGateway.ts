@@ -1,4 +1,4 @@
-import { HttpClient } from "@imunoderma/i_adapters";
+import { HttpClient } from "@codeplaydata/adapters";
 import { Credentials } from "../../app/Credentials.js";
 import { Publisher } from "../Publisher.js";
 import { CredentialsGateway } from "./ CredentialsGateway.js";

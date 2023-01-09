@@ -1,5 +1,5 @@
 // @filename: CredentialsRepository.ts
-import { DatabaseQuery, Connection } from "@imunoderma/i_adapters";
+import { DatabaseQuery, Connection } from "@codeplaydata/adapters";
 import { CredentialsSaved } from "../interface/DomainEvents/CredentialsSaved.js";
 import { CredentialsNotSaved } from "../interface/DomainEvents/CredentialsNotSaved.js";
 import { UserIdentificationRequested } from "../interface/DomainEvents/UserIdentificationRequested.js";

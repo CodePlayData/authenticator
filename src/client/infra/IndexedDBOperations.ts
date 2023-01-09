@@ -1,5 +1,5 @@
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
-import { IndexedDBQuery } from "@imunoderma/i_adapters/enums.js";
+import { IndexedDBQuery } from "@codeplaydata/adapters/enums.js";
 
 class IndexedDBOperations implements DatabaseOperationsManifest {
     Create = IndexedDBQuery['add'];

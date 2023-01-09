@@ -1,7 +1,7 @@
 // @filename: Authenticator.test.ts
 import test from "node:test";
 import assert from "node:assert";
-import { Fetch, LocalStorage } from "@imunoderma/i_adapters";
+import { Fetch, LocalStorage } from "@codeplaydata/adapters";
 import { LocalStorageOperations as LocalStorageOps } from "../infra/LocalStorageOperations.js";
 import { AuthConfig, Authenticator } from "./Autheticator.js";
 

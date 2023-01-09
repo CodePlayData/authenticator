@@ -1,16 +1,18 @@
 // @filename: User.ts
-
-/** 
- *  This is the main Aggregate. This type of class, as well as entities alone, are the objects that should be
- *  persisted in somewhere. A User is a combination of a name of a some person, his/her credentials and some
- *  metada. This class is kind of generic class to be extends in specialist classes of the domain of the
- *  application that will use this module.
- *  
- *  PS¹ - Since this class has only a get method and a private property, provide a interface is not possibly.
- */
-
-import { UserMetadata } from "../types";
 import type { Credentials } from "./Credentials.js"
+
+type UserMetadata = {
+    id: {
+        $oid: string
+    }
+    isActive: boolean,
+    isDue: boolean,
+    createdAt: string,
+    lastAccess: string,
+    license: string[],
+    whenTokensRequested: string[],
+    [key: string]: any
+};
 
 class User {
     /** @type { UserMetadata | undefined } - While unlikely, it would be possible to have a user without metadata. */
@@ -25,12 +27,13 @@ class User {
     constructor(readonly name: String, readonly credentials: Credentials, usermetadata?: UserMetadata) {
         this._metadata = usermetadata;
     }
-
+    
     get metadata() {
         return this._metadata
     }
 }
   
 export {
-    User
+    User,
+    UserMetadata
 }

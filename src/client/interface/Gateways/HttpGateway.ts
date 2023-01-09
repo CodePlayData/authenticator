@@ -1,4 +1,4 @@
-import { HttpClient } from "@imunoderma/i_adapters";
+import { HttpClient } from "@codeplaydata/adapters";
 
 interface HttpGateway {
     httpClient: HttpClient;
