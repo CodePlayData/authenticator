@@ -1,3 +1,4 @@
+// @filename: DatabaseOperationsManifest.ts
 import { DatabaseQuery } from "@codeplaydata/adapters";
 
 interface DatabaseOperationsManifest {

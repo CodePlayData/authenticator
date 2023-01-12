@@ -1,7 +1,8 @@
 // @filename: index.ts
+//FIXME
 import { DatabasePermission, RepositoryMethod, CredentialsDataFormat, HttpClientOptions, StorageOptions } from "./enums.js";
 import { RequestBuilder } from "./utils/RequestBuilder.js";
-import { CredentialsSubmitted } from "./interface/DomainEvents/CredentialsSubmitted.js";
+import { CredentialsSubmitted } from "./interface/DomainEvents/CredentialSubmitted.js";
 import { UploadedRepositoryCredentialsData } from "./interface/DomainEvents/UploadedRepositoryCredentialsData.js";
 import { UserAuthenticated } from "./interface/DomainEvents/UserAuthenticated.js";
 import { CredentialsSaved } from "./interface/DomainEvents/CredentialsSaved.js";
@@ -15,10 +16,10 @@ import { UserIdentificationRequestedHandler } from "./interface/Handlers/UserIde
 import { CredentialsSubmittedHandler } from "./interface/Handlers/CredentialsSubmitted.js";
 import { UserAuthenticatedHandler } from "./interface/Handlers/UserAuthenticated.js";
 //import { UploadedRepositoryCredentialsDataHandler, RequestedJsonWebTokenHandler, CachedCredentialNotFoundHandler, ValidCachedCredentialNotFoundHandler, RequestedUserDataHandler, UploadedRepositoryIdentificationDataHandler } from "./interface/handlers.js";
-import { CredentialsRepository } from "./infra/CredentialsRepository.js";
+import { CredentialsRepository } from "./infra/CredentialRepository.js";
 import { UserRepository } from "./infra/UserRepository.js";
 import { DomainEventsRepository } from "./infra/DomainEventsRepository.js";
-import { CredentialsSubmit } from "./app/CredentialsSubmit.js";
+import { CredentialsSubmit } from "./app/CredentialSubmit.js";
 import { Mediator } from "./interface/Mediator.js";
 import { Authenticator } from "./app/Autheticator.js";
 import { Credentials } from "./app/Credentials.js";

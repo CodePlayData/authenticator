@@ -1,7 +1,0 @@
-# UserHttpGateway
-
-## Sobre
-
-## Justificativa
-
-## Implementação

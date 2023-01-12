@@ -1,9 +1,5 @@
 // @filename: CachedCredentialsNotFound.ts
-
-/**
- *  The event emitted by the Credentials databaseAdapter/Repository when there is nothing there.
- */
-
+// FIXME
 import { DomainEvent } from "../DomainEvent";
 import { Credentials } from "../../app/Credentials.js";
 

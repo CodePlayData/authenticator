@@ -1,3 +1,5 @@
+// @filename: CredentialsGateway.ts
+//FIXME
 import { Credentials } from "../../app/Credentials.js"
 
 interface CredentialsGateway {

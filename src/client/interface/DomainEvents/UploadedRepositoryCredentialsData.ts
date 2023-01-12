@@ -1,9 +1,4 @@
 // @filename: UploadedRepositoryCredentialsData.ts
-
-/**
- *  The event that carries info about credentials saved in the repository.
- */
-
 import { Credentials } from "../..";
 import { DomainEvent } from "../DomainEvent";
 

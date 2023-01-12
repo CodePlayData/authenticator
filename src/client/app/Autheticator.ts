@@ -9,15 +9,16 @@ import { UserAuthenticatedHandler } from "../interface/Handlers/UserAuthenticate
 import { CredentialsSubmittedHandler } from "../interface/Handlers/CredentialsSubmitted.js";
 import { CredentialsSavedHandler } from "../interface/Handlers/CredentialsSaved.js";
 import { UserIdentificationRequestedHandler } from "../interface/Handlers/UserIdentificationRequested.js";
-import { CredentialsRepository } from "../infra/CredentialsRepository.js";
+import { CredentialsRepository } from "../infra/CredentialRepository.js";
 import { DomainEventsRepository } from "../infra/DomainEventsRepository.js";
 import { UserRepository } from "../infra/UserRepository.js";
 import { IndexedDBOperations as IndexedDBOps } from "../infra/IndexedDBOperations.js";
 import { LocalStorageOperations as LocalStorageOps } from "../infra/LocalStorageOperations.js";
 import { MongoDBOperations as MongoDbOps } from "../infra/MongoDBOperations.js";
 import { Channel } from "../interface/Channel.js";
-import { UserChannel } from "../interface/Channels/User.js";
+import { UserChannel } from "../interface/Channels/Profiles.js";
 import { CredentialsChannel } from "../interface/Channels/Credentials.js";
+import { SingletonDuplicityError } from "./SingletonDuplicityError.js";
 
 type AuthConfig = {
     readonly httpClient: HttpClient,
@@ -40,9 +41,9 @@ class Authenticator {
 
     constructor(readonly config: AuthConfig) {
         if(Authenticator.hasAlready) {
-            throw new Error('You can not invoke two instances of this class.')
+            throw new SingletonDuplicityError()
         }
-
+        
         this.channels[0] = 
             config.cache?.adapter ? 
             new UserChannel(new DomainEventsRepository(config.cache.adapter, config.cache.operations)) :

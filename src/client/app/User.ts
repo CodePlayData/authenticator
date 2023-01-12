@@ -1,4 +1,5 @@
 // @filename: User.ts
+//FIXME
 import type { Credentials } from "./Credentials.js"
 
 type UserMetadata = {

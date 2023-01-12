@@ -1,10 +1,4 @@
 // @filename: DomainEventsRepository.ts
-
-/**
- *  This file contains the repositories, think it as the contracts with any persistent storage that 
- *  stores your entity (or Data Transfer Object).
- */
-
 import { Connection, DatabaseQuery } from "@codeplaydata/adapters";
 import { DomainEvent } from "../interface/DomainEvent";
 import { DatabaseOperationsManifest as DbOps } from "./DatabaseOperationsManifest";

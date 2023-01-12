@@ -1,3 +1,4 @@
+// @filename: CachedUserNotFound.test.ts
 import { DomainEvent } from "../DomainEvent.js";
 
 class CachedUserNotFound implements DomainEvent {

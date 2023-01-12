@@ -1,3 +1,4 @@
+// @filename: IndexedDBOperations.ts
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
 import { IndexedDBQuery } from "@codeplaydata/adapters/enums.js";
 

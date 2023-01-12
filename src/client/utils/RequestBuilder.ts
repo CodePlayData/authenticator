@@ -1,9 +1,4 @@
 // @filename: RequestBuilder.ts
-/**
- *  The builder classes has many methods that always return all it context in this until you finalizes it 
- *  with the build method. This classes helps when there are many options the get the same result class.
- */
-
 interface RequestBuilder {
     header(header: string, value: string): this;
     get(): this;

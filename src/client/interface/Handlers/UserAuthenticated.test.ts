@@ -1,7 +1,8 @@
 // @filename: UserAuthorized.test.ts
+// FIXME
 import test from "node:test";
 import assert from "node:assert";
-import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
+import { CredentialsRepository } from "../../infra/CredentialRepository.js";
 import { UserAuthenticatedHandler } from "./UserAuthenticated.js";
 import { Handler } from "./Handler.js";
 import { Credentials } from "../../app/Credentials.js";

@@ -1,3 +1,4 @@
+// @filename: UserDataDeleted.ts
 import { DomainEvent } from "../DomainEvent.js";
 
 class UserDataDeleted implements DomainEvent {

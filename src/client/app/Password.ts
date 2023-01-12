@@ -1,11 +1,4 @@
 // @filename: Password.ts
-
-/**
- *  This is the HASH-256 of the hexadecimal converted password to be persisted. Since no one should know the
- *  raw string of the password, comparisions must be made with another new Password() class with the raw data as
- *  parameter and comparing with the old one.
- */
-
 import crypto from "node:crypto";
 
 interface Password {

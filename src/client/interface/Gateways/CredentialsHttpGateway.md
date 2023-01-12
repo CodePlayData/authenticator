@@ -1,7 +1,0 @@
-# CredentialsHttpGateway
-
-## Sobre
-
-## Justificativa
-
-## Implementação

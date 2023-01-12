@@ -1,9 +1,5 @@
 // @filename: Token.ts
-
-/**
- *  The authentication Token emit by some Certified Authority - CA. For now will be in JsonWebToken.
- */
-
+//FIXME
 import { sign } from "jsonwebtoken";
 
 class Token {

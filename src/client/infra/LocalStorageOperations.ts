@@ -1,3 +1,4 @@
+// @filename: LocalStorageOperations.ts
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
 import { LocalStorageQuery } from "@codeplaydata/adapters/enums.js";
 

@@ -1,5 +1,5 @@
 // @filename: CredentialsSaved.ts
-import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
+import { CredentialsRepository } from "../../infra/CredentialRepository.js";
 import { CredentialsSaved } from "../DomainEvents/CredentialsSaved.js";
 import { Handler } from "./Handler.js";
 

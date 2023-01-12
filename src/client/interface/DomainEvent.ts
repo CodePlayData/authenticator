@@ -1,3 +1,4 @@
+// @filename: DomainEvent.ts
 interface DomainEvent {
     name: string;
     msg?: unknown;

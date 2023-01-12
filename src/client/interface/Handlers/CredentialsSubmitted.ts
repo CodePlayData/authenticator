@@ -1,6 +1,7 @@
 // @filename: CredentialsSubmitted.ts
-import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
-import { CredentialsSubmitted } from "../DomainEvents/CredentialsSubmitted.js";
+//FIXME
+import { CredentialsRepository } from "../../infra/CredentialRepository.js";
+import { CredentialsSubmitted } from "../DomainEvents/CredentialSubmitted.js";
 import { Handler } from "./Handler.js";
 
 class CredentialsSubmittedHandler extends Handler {   

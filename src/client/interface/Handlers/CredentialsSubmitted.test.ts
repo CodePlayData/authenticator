@@ -1,9 +1,10 @@
 // @filename: CredentialsSubmitted.test.ts
+//FIXME
 import test from "node:test";
 import assert from "node:assert";
-import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
+import { CredentialsRepository } from "../../infra/CredentialRepository.js";
 import { CredentialsSubmittedHandler } from "./CredentialsSubmitted.js";
-import { CredentialsSubmitted } from "../DomainEvents/CredentialsSubmitted.js";
+import { CredentialsSubmitted } from "../DomainEvents/CredentialSubmitted.js";
 import { Handler } from "./Handler.js";
 import { Credentials } from "../../app/Credentials.js";
 import { Password } from "../../app/Password.js";

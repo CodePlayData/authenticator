@@ -1,3 +1,4 @@
+// @filename: MongoDBOperations.ts
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
 import { MongoQuery } from "@codeplaydata/adapters/enums.js";
 

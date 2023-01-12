@@ -5,7 +5,7 @@ import { Fetch, LocalStorage } from "@codeplaydata/adapters";
 import { LocalStorageOperations as LocalStorageOps } from "../infra/LocalStorageOperations.js";
 import { AuthConfig, Authenticator } from "./Autheticator.js";
 
-test('Unidade - Testando se a aplicação inicia com dois canais de comunicação: Usuário e Credenciais.', () => {
+test('Unidade - Testando se a aplicacao inicia com dois canais de comunicacao: Usuario e Credenciais.', () => {
     const authConfig: AuthConfig = {
         httpClient: new Fetch(),
         storage: {

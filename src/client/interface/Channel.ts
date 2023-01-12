@@ -1,3 +1,4 @@
+// @filename: Channel.ts
 import { DomainEventsRepository } from "../infra/DomainEventsRepository.js";
 import { DomainEvent } from "./DomainEvent.js";
 import { Mediator } from "./Mediator.js";
