@@ -16,7 +16,7 @@ import { UserIdentificationRequestedHandler } from "./interface/Handlers/UserIde
 import { CredentialsSubmittedHandler } from "./interface/Handlers/CredentialsSubmitted.js";
 import { UserAuthenticatedHandler } from "./interface/Handlers/UserAuthenticated.js";
 //import { UploadedRepositoryCredentialsDataHandler, RequestedJsonWebTokenHandler, CachedCredentialNotFoundHandler, ValidCachedCredentialNotFoundHandler, RequestedUserDataHandler, UploadedRepositoryIdentificationDataHandler } from "./interface/handlers.js";
-import { CredentialsRepository } from "./infra/CredentialRepository.js";
+import { CredentialsRepository } from "./infra/CredentialsRepository.js";
 import { UserRepository } from "./infra/UserRepository.js";
 import { DomainEventsRepository } from "./infra/DomainEventsRepository.js";
 import { CredentialsSubmit } from "./app/CredentialSubmit.js";
@@ -24,7 +24,7 @@ import { Mediator } from "./interface/Mediator.js";
 import { Authenticator } from "./app/Autheticator.js";
 import { Credentials } from "./app/Credentials.js";
 import { Password } from "./app/Password.js"
-import { User } from "./app/User.js";
+import { User } from "./app/Profile.js";
 import { DomainEvent } from "./interface/DomainEvent.js";
 
 export {

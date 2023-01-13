@@ -9,7 +9,7 @@ import { UserAuthenticatedHandler } from "../interface/Handlers/UserAuthenticate
 import { CredentialsSubmittedHandler } from "../interface/Handlers/CredentialsSubmitted.js";
 import { CredentialsSavedHandler } from "../interface/Handlers/CredentialsSaved.js";
 import { UserIdentificationRequestedHandler } from "../interface/Handlers/UserIdentificationRequested.js";
-import { CredentialsRepository } from "../infra/CredentialRepository.js";
+import { CredentialsRepository } from "../infra/CredentialsRepository.js";
 import { DomainEventsRepository } from "../infra/DomainEventsRepository.js";
 import { UserRepository } from "../infra/UserRepository.js";
 import { IndexedDBOperations as IndexedDBOps } from "../infra/IndexedDBOperations.js";

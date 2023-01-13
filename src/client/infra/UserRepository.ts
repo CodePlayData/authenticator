@@ -5,7 +5,7 @@ import { UploadedRepositoryIdentificationData } from "../interface/DomainEvents/
 import { UserNotIdentified } from "../interface/DomainEvents/UserNotIdentified.js";
 import type { Connection, DatabaseQuery } from "@codeplaydata/adapters";
 import type { Credentials } from "../app/Credentials.js";
-import type { User } from "../app/User"
+import type { User } from "../app/Profile.js"
 import { DatabaseOperationsManifest as DbOps } from "./DatabaseOperationsManifest.js";
 import { Channel } from "../interface/Channel.js";
 import { Publisher } from "../interface/Publisher.js";

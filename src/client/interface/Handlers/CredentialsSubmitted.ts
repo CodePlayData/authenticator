@@ -1,6 +1,6 @@
 // @filename: CredentialsSubmitted.ts
 //FIXME
-import { CredentialsRepository } from "../../infra/CredentialRepository.js";
+import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
 import { CredentialsSubmitted } from "../DomainEvents/CredentialSubmitted.js";
 import { Handler } from "./Handler.js";
 

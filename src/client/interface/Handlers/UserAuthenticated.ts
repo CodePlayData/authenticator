@@ -2,7 +2,7 @@
 // FIXME
 import { Credentials } from "../../app/Credentials.js";
 import { CredentialsDataFormat } from "../../enums.js";
-import { CredentialsRepository } from "../../infra/CredentialRepository.js";
+import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
 import { UserAuthenticated } from "../DomainEvents/UserAuthenticated.js";
 import { Handler } from "./Handler.js";
 

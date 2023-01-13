@@ -7,7 +7,7 @@ import { LocalStorage as LocalStorageAdapter } from "@codeplaydata/adapters";
 import 'mock-local-storage';
 import { Password } from "../app/Password.js";
 import { Credentials } from "../app/Credentials.js";
-import { User } from "../app/User.js";
+import { User } from "../app/Profile.js";
 import { LocalStorageOperations as LocalStorageOps } from "./LocalStorageOperations.js";
 
 test('Integration Test - Testing if the UserRepository can exists.', async(context) => {
