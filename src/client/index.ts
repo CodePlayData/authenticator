@@ -1,8 +1,7 @@
 // @filename: index.ts
-//FIXME
 import { DatabasePermission, RepositoryMethod, CredentialsDataFormat, HttpClientOptions, StorageOptions } from "./enums.js";
 import { RequestBuilder } from "./utils/RequestBuilder.js";
-import { CredentialsSubmitted } from "./interface/DomainEvents/CredentialSubmitted.js";
+import { CredentialSubmitted } from "./interface/DomainEvents/CredentialSubmitted.js";
 import { UploadedRepositoryCredentialsData } from "./interface/DomainEvents/UploadedRepositoryCredentialsData.js";
 import { UserAuthenticated } from "./interface/DomainEvents/UserAuthenticated.js";
 import { CredentialsSaved } from "./interface/DomainEvents/CredentialsSaved.js";
@@ -22,9 +21,9 @@ import { DomainEventsRepository } from "./infra/DomainEventsRepository.js";
 import { CredentialsSubmit } from "./app/CredentialSubmit.js";
 import { Mediator } from "./interface/Mediator.js";
 import { Authenticator } from "./app/Autheticator.js";
-import { Credentials } from "./app/Credentials.js";
+import { PasswordCredential } from "./app/PasswordCredential.js";
 import { Password } from "./app/Password.js"
-import { User } from "./app/Profile.js";
+import { Profile } from "./app/Profile.js";
 import { DomainEvent } from "./interface/DomainEvent.js";
 
 export {
@@ -34,7 +33,7 @@ export {
     HttpClientOptions, 
     StorageOptions,
     RequestBuilder,
-    CredentialsSubmitted, 
+    CredentialSubmitted, 
     UploadedRepositoryCredentialsData, 
     CredentialsNotSaved, 
     CredentialsSaved, 
@@ -59,8 +58,8 @@ export {
     CredentialsSubmit,
     Mediator,
     Authenticator,
-    Credentials,
-    User,
+    PasswordCredential,
+    Profile,
     Password,
     DomainEvent
 }

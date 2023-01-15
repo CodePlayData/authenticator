@@ -1,6 +1,4 @@
 // @filename: UploadedRepositoryIdentificationData.ts
-// FIXME
-import { Credentials } from "../../app/Credentials.js";
 import { DomainEvent } from "../DomainEvent.js";
 
 type UserData = {
@@ -19,8 +17,8 @@ class UploadedRepositoryIdentificationData implements DomainEvent {
      * @param indexDbData @type { any } The return from the repository.
      * @param userData @type { undefined | Credentials } The data to passed through.
      */
-    constructor(readonly indexDbData: UserData, readonly credentials?: Credentials){
-        this.msg = !credentials ? indexDbData : credentials;
+    constructor(readonly indexDbData: UserData, readonly credential?: Credential){
+        this.msg = !credential ? indexDbData : credential;
     }
 }
 

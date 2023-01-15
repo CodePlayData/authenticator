@@ -24,7 +24,7 @@ test('Teste de Integracao - Testando se o CredentialSubmit alcanca o autenticado
         baseUrl: 'https://api.imunoderma.com.br/v1',
     }
     const authenticator = new Authenticator(authConfig);
-    const usecase = new CredentialsSubmit([authenticator.channels[1]]);
+    const usecase = new CredentialsSubmit(authenticator);
     const password = await Password.define('12345678');
     const email: Identifier = {
         id: 'test@gmail.com'

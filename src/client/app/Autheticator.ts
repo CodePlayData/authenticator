@@ -39,9 +39,13 @@ class Authenticator {
     credentialsRepository: CredentialsRepository;
     usersRepository: UserRepository;
 
+    /**
+     *  The authenticator that triggers the domain logic.
+     *  @param config @type { AuthConfig } - The authenticator configuration, _i.e._ the type of storage used for all events or chache, the httpclient, and etc.
+     */
     constructor(readonly config: AuthConfig) {
         if(Authenticator.hasAlready) {
-            throw new SingletonDuplicityError()
+            throw new SingletonDuplicityError();
         }
         
         this.channels[0] = 

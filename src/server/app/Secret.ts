@@ -1,6 +1,6 @@
 // @filename: Secret.ts
-//FIXME
-import { Password } from "@imunoderma/e_authenticator_client";
+
+import { Password } from "../../client";
 
 class Secret extends Password {
     /** @type { string } - The public secret that the tokens are signed for. */

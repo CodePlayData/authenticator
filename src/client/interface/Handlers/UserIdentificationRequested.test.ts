@@ -1,13 +1,13 @@
 // @filename: UserIdentificationRequested.test.ts
-//FIXME
 import test from "node:test";
 import assert from "node:assert";
 import { UserRepository } from "../../infra/UserRepository.js";
 import { UserIdentificationRequestedHandler } from "./UserIdentificationRequested.js";
 import { Handler } from "./Handler.js";
 import { Password } from "../../app/Password.js";
-import { Credentials } from "../../app/Credentials.js";
 import { UserIdentificationRequested } from "../DomainEvents/UserIdentificationRequested.js";
+import { PasswordCredential } from "../../app/PasswordCredential.js";
+import { Email } from "../../app/Email.js";
 
 test('Unit Test - Testing if the UserIdentificationRequestedHandler can exists.', () => {
     const fakeRepository = {} as UserRepository;
@@ -27,10 +27,11 @@ test('Behavioral Test - Testing if the UserIdentificationRequestedHandler can re
 });
 
 test('Integration Test - Testing the handle method in UserIdentificationRequestedHandler.', async () => {
-    const credentials = new Credentials('test@gmail.com', await Password.define('my-secret'));
+    const email = new Email('test@gmail.com');
+    const credentials = new PasswordCredential(email, await Password.define('my-secret'));
     const event = new UserIdentificationRequested(credentials);
     const fakeRepository = {
-            get (credentialsPassedThrougHandler: Credentials) {
+            get (credentialsPassedThrougHandler: Credential) {
                 assert.deepEqual(credentialsPassedThrougHandler, credentials);
             }
         } as UserRepository;

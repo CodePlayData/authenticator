@@ -1,5 +1,4 @@
 // @filename: UploadedRepositoryCredentialsData.ts
-import { Credentials } from "../..";
 import { DomainEvent } from "../DomainEvent";
 
 class UploadedRepositoryCredentialsData implements DomainEvent {
@@ -13,8 +12,8 @@ class UploadedRepositoryCredentialsData implements DomainEvent {
      * @param credentials @type { Credentials } If is the cycle without credentials saved this data is passed to call the
      * httpClient later.
      */
-    constructor(readonly indexDbData: Array<undefined | Credentials>, readonly credentials?: Credentials | undefined) {
-        this.msg = credentials;
+    constructor(readonly indexDbData: Array<undefined | Credential>, readonly credential?: Credential | undefined) {
+        this.msg = credential;
     }
 }
 

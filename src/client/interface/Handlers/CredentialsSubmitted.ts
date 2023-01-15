@@ -1,7 +1,6 @@
 // @filename: CredentialsSubmitted.ts
-//FIXME
 import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
-import { CredentialsSubmitted } from "../DomainEvents/CredentialSubmitted.js";
+import { CredentialSubmitted } from "../DomainEvents/CredentialSubmitted.js";
 import { Handler } from "./Handler.js";
 
 class CredentialsSubmittedHandler extends Handler {   
@@ -10,15 +9,15 @@ class CredentialsSubmittedHandler extends Handler {
      * @param repository @type { Repository } The repository to get the credentials.
      */
     constructor(readonly repository: CredentialsRepository){
-        super(['CredentialsSubmitted']);
+        super(['CredentialSubmitted']);
     }
 
     /**
      * This handle only get credentials from repository.
      * @param event @type { CredentialsSubmitted } The event to passed.
      */
-    async handle(event: CredentialsSubmitted): Promise<void> {  
-        this.repository.get(event.credentials);
+    async handle(event: CredentialSubmitted): Promise<void> {  
+        this.repository.get(event.credential);
     }
 }
 

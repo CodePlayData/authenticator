@@ -1,14 +1,14 @@
 // @filename: UserAuthorized.test.ts
-// FIXME
 import test from "node:test";
 import assert from "node:assert";
 import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
 import { UserAuthenticatedHandler } from "./UserAuthenticated.js";
 import { Handler } from "./Handler.js";
-import { Credentials } from "../../app/Credentials.js";
 import { Password } from "../../app/Password.js";
 import { UserAuthenticated } from "../DomainEvents/UserAuthenticated.js";
 import { CredentialsDataFormat } from "../../enums.js";
+import { PasswordCredential } from "../../app/PasswordCredential.js";
+import { Email } from "../../app/Email.js";
 
 test('Unit Test - Testing if the  UserAuthenticatedHandler can exists.', () => {
     const fakerepo = {} as CredentialsRepository;
@@ -27,11 +27,12 @@ test('Behavioral Test - Testing if the UserAuthenticatedHandler can register ano
 });
 
 test('Integration Test - Testing the handle method in UserAuthenticatedHandler.', async () => {
-    const credentials = new Credentials('test@gmail.com', await Password.define('my-secret'));
+    const email = new Email('test@gmail.com');
+    const credentials = new PasswordCredential(email, await Password.define('my-secret'));
     credentials.token = 'abcdefghijlmnopqrstuvxz';
     const event = new UserAuthenticated(credentials);
     const fakerepo = {
-        save (credentialsPassedThrougHandler: Credentials) {
+        save (credentialsPassedThrougHandler: Credential) {
             assert.deepEqual(credentialsPassedThrougHandler, credentials.info(CredentialsDataFormat.full));
         }
     } as CredentialsRepository;

@@ -16,7 +16,7 @@ test('Unidade - Testando se a aplicacao inicia com dois canais de comunicacao: U
             adapter: new LocalStorage(),
             operations: new LocalStorageOps()
         },
-        baseUrl: 'https://api.imunoderma.com.br/v1',
+        baseUrl: 'http://127.0.0.1:3000/api/v1',
     }
     const authenticator = new Authenticator(authConfig);
     assert.strictEqual(authenticator.channels.length, 2);

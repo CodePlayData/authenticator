@@ -10,7 +10,7 @@ class UserIdentificationRequestedHandler extends Handler {
     }
 
     handle(event: UserIdentificationRequested): void {
-        this.repository.get(event.credentials)
+        this.repository.get(event.credential)
     }
 }
 

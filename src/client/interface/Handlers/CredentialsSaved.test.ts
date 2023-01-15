@@ -1,13 +1,13 @@
 // @filename: CredentialsSaved.test.ts
-// FIXME
 import test from "node:test";
 import assert from "node:assert";
 import { CredentialsSavedHandler } from "./CredentialsSaved.js";
-import { Credentials } from "../../app/Credentials.js";
 import { Password } from "../../app/Password.js";
 import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
 import { CredentialsSaved } from "../DomainEvents/CredentialsSaved.js";
 import { Handler } from "./Handler.js";
+import { PasswordCredential } from "../../app/PasswordCredential.js";
+import { Email } from "../../app/Email.js";
 
 test('Unit Test - Testing if the CredentialsSavedHandler can exists. ', () => {
     const fakeRepository = {} as CredentialsRepository;
@@ -26,10 +26,11 @@ test('Behavioral Test - Testing if the CredentialsSavedHandler can register anot
 });
 
 test('Integration Test - Testing the handle method in CredentialsSavedHandler.', async () => {
-    const credentials = new Credentials('test@gmail.com', await Password.define('my-secret'));
+    const email = new Email('test@gmail.com');
+    const credentials = new PasswordCredential(email, await Password.define('my-secret'));
     const event = new CredentialsSaved(credentials);
     const fakeRepository = {
-            get (credentialsPassedThrougHandler: Credentials, idPassedThrougHandler: number | string) {
+            get (credentialsPassedThrougHandler: Credential, idPassedThrougHandler: number | string) {
                 assert.deepEqual(credentialsPassedThrougHandler, credentials);
                 assert.deepEqual(idPassedThrougHandler, credentials.id);
             }

@@ -1,6 +1,4 @@
 // @filename: UserIdentificationRequested.ts
-//FIXME
-import { Credentials } from "../../app/Credentials.js";
 import { DomainEvent } from "../DomainEvent.js";
 
 class UserIdentificationRequested implements DomainEvent {
@@ -9,11 +7,11 @@ class UserIdentificationRequested implements DomainEvent {
 
     /**
      * The first event in the Authorization cycle.
-     * @param credentials @type { Credentials }
+     * @param credential @type { Credential }
      * @param databaseReturn @type{ any }
      */
-    constructor(readonly credentials: Credentials,  readonly databaseReturn?: any){
-        this.msg = databaseReturn ? { databaseReturn, credentials } : credentials;
+    constructor(readonly credential: Credential,  readonly databaseReturn?: any){
+        this.msg = databaseReturn ? { databaseReturn, credential } : credential;
     }
 }
 

@@ -30,6 +30,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "@codeplaydata/adapters": "^0.4.5"
+    "@codeplaydata/adapters": "^0.4.5",
+    "jsonwebtoken": "^9.0.0"
   }
 }

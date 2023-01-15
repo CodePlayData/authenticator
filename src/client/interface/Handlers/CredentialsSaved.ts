@@ -10,8 +10,8 @@ class CredentialsSavedHandler extends Handler {
     }
 
     handle(event: CredentialsSaved): void | Promise<void> {
-        if(event.credentials?.id) {
-            this.repository.get(event.credentials, event.credentials.id);
+        if(event.credential?.id) {
+            this.repository.get(event.credential, event.credential.id);
         }
     }
 }

@@ -5,7 +5,7 @@ import { CredentialsNotSaved } from "../interface/DomainEvents/CredentialsNotSav
 import { UserIdentificationRequested } from "../interface/DomainEvents/UserIdentificationRequested.js";
 import { DatabaseOperationsManifest } from "./DatabaseOperationsManifest.js";
 import { Channel } from "../interface/Channel.js";
-import { Publisher } from "../interface/Publisher.js";
+import { Publisher } from "../Publisher.js";
 import { InternalServiceError } from "../interface/DomainEvents/InternalServiceError.js";
 import { CachedCredentialsNotFound } from "../interface/DomainEvents/CachedCredentialsNotFound.js";
 import { ValidCachedCredentialsNotFound } from "../interface/DomainEvents/ValidCachedCredentialsNotFound.js";
@@ -85,11 +85,11 @@ class CredentialsRepository extends Publisher {
         request.onerror = () => this.publish(new InternalServiceError('Data not read from IndexDB yet.'));
         request.onsuccess = () => {
             if(request.result.length < 1) {
-                this.publish(new CachedCredentialsNotFound(credential));
+                this.publish(new CachedCredentialsNotFound(credential as Credential));
                 return
             } else {
                 // Por enquanto assim mas vai ter que trocar.    
-                this.publish(new ValidCachedCredentialsNotFound(credential));
+                this.publish(new ValidCachedCredentialsNotFound(credential as Credential));
                 this.publish(new CredentialsSaved());
                 return
             }

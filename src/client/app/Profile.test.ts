@@ -4,19 +4,8 @@ import assert from "node:assert";
 import { Profile } from "./Profile.js";
 import { PasswordCredential } from "./PasswordCredential.js";
 import { Password } from "./Password.js";
-import { Identifier } from "./Identifier.js";
-
-class Email extends Identifier {
-    constructor(readonly email: string) {
-        super(email)
-    }
-}
-
-class User extends Profile {
-    constructor(readonly email: Email, readonly credential: Credential) {
-        super(email, credential)
-    }
-}
+import { Email } from "./Email.js";
+import { User } from "./User.js";
 
 test('Testando a classe Profile extendida para um caso de uso hipotetico de cadastro de usuários por email', async (context) => {
     const password = await Password.define('12345678');

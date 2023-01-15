@@ -1,6 +1,6 @@
 // @filename: Publisher.ts
-import { DomainEvent } from "./DomainEvent.js";
-import { Mediator } from "./Mediator.js";
+import { DomainEvent } from "./interface/DomainEvent.js";
+import { Mediator } from "./interface/Mediator.js";
 
 interface Publisher {
     readonly to: Mediator[];

@@ -1,9 +1,7 @@
 // @filename: CredentialsHttpGateway.ts
-//FIXME
 import { HttpClient } from "@codeplaydata/adapters";
-import { Credentials } from "../../app/Credentials.js";
-import { Publisher } from "../Publisher.js";
-import { CredentialsGateway } from "./ CredentialsGateway.js";
+import { Publisher } from "../../Publisher.js";
+import { CredentialsGateway } from "./CredentialsGateway.js";
 import { HttpGateway } from "./HttpGateway.js";
 import { Channel } from "../Channel.js";
 import { RequestBuilder } from "../../utils/RequestBuilder.js";
@@ -16,13 +14,10 @@ class CredentialsHttpGateway extends Publisher implements HttpGateway, Credentia
         super(channels as Channel[]);
     }
 
-    async login(credentials: Credentials) {
-        if(!credentials.password || !credentials.email) {
-            throw new Error('The credentials to login must have at least email and password.')
-        }
+    async login(credential: Credential) {
         const request = new RequestBuilder(this.url)
                             .header('Content-Type', 'application/json')
-                            .post(credentials)
+                            .post(credential)
                             .build();
 
         const response = await this.httpClient.fetch(request);
@@ -30,8 +25,7 @@ class CredentialsHttpGateway extends Publisher implements HttpGateway, Credentia
 
         if(this.channels) {
             if(response.ok) {
-                credentials.token = body.token;
-                const event = new UserAuthenticated(credentials);
+                const event = new UserAuthenticated(credential);
                 this.publish(event);
             } else {
                 const errorMsg = await response.text();

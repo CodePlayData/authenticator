@@ -1,9 +1,7 @@
 // @filename: UserGateway.ts
-//FIXME
-import { Credentials } from "../../app/Credentials.js";
 
 interface UserGateway {
-    whoami(credentials: Credentials): any;
+    whoami(credential: Credential): any;
 }
 
 export {

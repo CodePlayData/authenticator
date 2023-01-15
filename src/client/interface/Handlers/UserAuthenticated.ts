@@ -1,7 +1,4 @@
 // @filename: UserAuthorized.ts
-// FIXME
-import { Credentials } from "../../app/Credentials.js";
-import { CredentialsDataFormat } from "../../enums.js";
 import { CredentialsRepository } from "../../infra/CredentialsRepository.js";
 import { UserAuthenticated } from "../DomainEvents/UserAuthenticated.js";
 import { Handler } from "./Handler.js";
@@ -13,7 +10,7 @@ class UserAuthenticatedHandler extends Handler {
     }
     
     handle(event: UserAuthenticated): void {
-        this.repository.save(event.credentials.info(CredentialsDataFormat.full) as Credentials);
+        this.repository.save(event.credential as Credential);
     }
 }
 

@@ -1,23 +1,20 @@
 // @filename: UserRepository.ts
-//FIXME
 import { UserIdentified } from "../interface/DomainEvents/UserIdentified.js";
 import { UploadedRepositoryIdentificationData } from "../interface/DomainEvents/UploadedRepositoryIdentificationData.js";
-import { UserNotIdentified } from "../interface/DomainEvents/UserNotIdentified.js";
 import type { Connection, DatabaseQuery } from "@codeplaydata/adapters";
-import type { Credentials } from "../app/Credentials.js";
-import type { User } from "../app/Profile.js"
+import type { Profile } from "../app/Profile.js"
 import { DatabaseOperationsManifest as DbOps } from "./DatabaseOperationsManifest.js";
 import { Channel } from "../interface/Channel.js";
-import { Publisher } from "../interface/Publisher.js";
+import { Publisher } from "../Publisher.js";
 import { InternalServiceError } from "../interface/DomainEvents/InternalServiceError.js";
 import { UserDataDeleted } from "../interface/DomainEvents/UserDataDeleted.js";
 import { CachedUserNotFound } from "../interface/DomainEvents/CachedUserNotFound.js";
  
 interface UserRepository {
-    save(user: User): void;
-    get(object: Credentials | string): IDBRequest<any> | IDBRequest<IDBValidKey> | IDBRequest<undefined> | IDBRequest<any[]> | Promise<any>;
+    save(user: Profile): void;
+    get(object: Credential | string): IDBRequest<any> | IDBRequest<IDBValidKey> | IDBRequest<undefined> | IDBRequest<any[]> | Promise<any>;
     list(): any;
-    delete(credentials: Credentials): void;
+    delete(credentials: Credential): void;
 }
  
 class UserRepository extends Publisher {
@@ -26,31 +23,31 @@ class UserRepository extends Publisher {
         super(channels as Channel[]);
     }
 
-    save(user: User): void {
+    save(user: Profile): void {
         this.databaseStore ? this.databaseAdapter.store = this.databaseStore: undefined;
-        const request = this.databaseAdapter.query(this.dbOps.Create, user, user.credentials.email);
+        const request = this.databaseAdapter.query(this.dbOps.Create, user, user.credential.id);
         if(this.channels?.length && this.channels.length > 0 && 'onerror' in request) {
             this.#saveEmits(request, user);
         }
         return
     }
 
-    #saveEmits(request: IDBRequest<any>, user?: User) {
+    #saveEmits(request: IDBRequest<any>, user?: Profile) {
         request.onerror = () => this.publish(new InternalServiceError('The user repository could not save the data provided.'));
         request.onsuccess = () =>  this.publish(new UserIdentified(user));
         return
     }
 
-    get(credentials: Credentials) {
+    get(credentials: Credential) {
         this.databaseStore ? this.databaseAdapter.store = this.databaseStore: undefined;
-        const request = this.databaseAdapter.query(this.dbOps.Readone, credentials, credentials.email);
+        const request = this.databaseAdapter.query(this.dbOps.Readone, credentials, credentials.id);
         if(this.channels?.length && this.channels.length > 0 && 'onerror' in request) {
             this.#getEmits(request, credentials);
         }
         return request
     }
 
-    #getEmits(request: IDBRequest<any>, credentials?: Credentials) {
+    #getEmits(request: IDBRequest<any>, credentials?: Credential) {
         request.onerror = () => this.publish(new InternalServiceError('The user repository could not read user data.'));
         request.onsuccess = () => {
             const userData = request.result;
@@ -78,11 +75,11 @@ class UserRepository extends Publisher {
         return
     }
 
-    delete(credentials: Credentials) {
+    delete(credentials: Credential) {
         this.databaseStore ? this.databaseAdapter.store = this.databaseStore: undefined;
-        const request = this.databaseAdapter.query(this.dbOps.Delete, undefined, credentials.email);
+        const request = this.databaseAdapter.query(this.dbOps.Delete, undefined, credentials.id);
         if(this.channels?.length && this.channels.length > 0 && 'onerror' in request) {
-            this.#deleteEmits(request, credentials.email)
+            this.#deleteEmits(request, credentials.id)
         }
         return
     }

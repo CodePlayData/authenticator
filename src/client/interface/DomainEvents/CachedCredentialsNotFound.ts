@@ -1,7 +1,5 @@
 // @filename: CachedCredentialsNotFound.ts
-// FIXME
-import { DomainEvent } from "../DomainEvent";
-import { Credentials } from "../../app/Credentials.js";
+import { DomainEvent } from "../DomainEvent.js";
 
 class CachedCredentialsNotFound implements DomainEvent {
     name = 'CachedCredentialsNotFound';
@@ -11,8 +9,8 @@ class CachedCredentialsNotFound implements DomainEvent {
      * This event cames from the database/repository.
      * @param credentials The credentials to call the httpClient later.
      */
-    constructor(readonly credentials: Credentials){
-        this.msg = credentials;
+    constructor(readonly credential: Credential){
+        this.msg = credential;
    }
 }
 
