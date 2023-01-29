@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc && cp LICENSE ./dist/LICENSE && cp README.md ./dist/README.md && cp package.json ./dist/package.json &&  cp ./src/types.d.ts ./dist",
     "publish": "npm publish ./dist --access=public",
-    "test": "node --test --trace-warnings --experimental-fetch"
+    "test": "node --test --experimental-fetch"
   },
   "repository": {
     "type": "git",

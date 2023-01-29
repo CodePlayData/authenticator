@@ -10,6 +10,6 @@
     "skipLibCheck": true,
     "moduleResolution": "node"
   },
-  "include": ["src", "src/app", "src/interface"],
-  "exclude": ["node_modules", "src/test", "src/**/*.md"]
+  "include": ["src/clients/browser", "src/server"],
+  "exclude": ["node_modules", "src/clients/mobile", "assets"]
 }
